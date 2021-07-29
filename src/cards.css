@@ -46,15 +46,12 @@ html {
 }
 
 .cardGroup {
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
-    display:flex;
-    justify-content: center;
-    width: 710px;
-    border: 1px solid #CAD0D2;
-    border-radius: 4px;
-    overflow: hidden;
+
+    flex-direction:column;
+    max-width: 320px;
+    border:1px solid #CAD0D2;
+    border-radius:4px;
+    
   }
   
     .cardGroup__card {
@@ -68,19 +65,19 @@ html {
       border-left: 1px solid #D7DBDD;
     }
   
-    .cardGroup__cardDescription {
-      /* flex-grow, flex-shrink, flex-basis */
-     flex-grow: 1;
-     
+    
 
+   @media only screen and (min-width: 370px){
 
+    html {
+      background: rgb(219, 231, 231);
     }
-
-   @media (max-width: 320px){
     .cardGroup {
       display:flex;
-      flex-direction: column;
-      width: 100%;
+      margin: 0 auto;
+      flex-direction: row;
+      max-width: 710px;
+     
     }
 
     .card__price {
@@ -96,10 +93,22 @@ html {
       max-width: calc(100% - 30px);
   }
   
+  .cardGroup__cardDescription {
+    /* flex-grow, flex-shrink, flex-basis */
+   flex-grow: 1;
+    
+   
+
+
+  }
+  .card__descriptionIcon {
+    margin: 15px;
+  }
+  
   .card {
     background: #59C173;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    flex-basis: 0;
   }
    }
